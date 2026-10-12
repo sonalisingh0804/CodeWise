@@ -1,69 +1,115 @@
-# CodeWise – AI-Powered Software Intelligence Platform
+# CodeWise — AI-Powered Software Intelligence Platform
 
-**Understand any software project in minutes instead of weeks.**
+> **Understand any software project in minutes instead of weeks.**
 
-CodeWise is an AI-powered software intelligence platform designed to simplify the process of understanding, analyzing, and documenting complex software projects. It aims to help developers, students, and software teams understand unfamiliar codebases, explore project structure, identify dependencies, and generate meaningful technical insights.
+CodeWise is an AI-powered software intelligence platform designed to simplify the process of understanding, analyzing, and documenting complex software projects. It aims to help developers explore unfamiliar codebases, understand dependencies, visualize architecture, and generate useful technical insights through automated code analysis and AI-assisted explanations.
 
-The platform is being developed as a two-semester BE Information Technology project.
+Developed as a two-semester BE Information Technology project.
 
-## 🚀 Problem Statement
+---
 
-Understanding a large or unfamiliar software project can be time-consuming due to:
-- Complex code structures and dependencies.
-- Incomplete or outdated documentation.
-- Difficulty identifying relationships between files and modules.
-- Challenges in analyzing code quality and understanding program workflows.
-- Time-consuming onboarding and maintenance of existing projects.
+## 📌 Table of Contents
 
-CodeWise aims to address these challenges by automating codebase analysis and making software architecture easier to understand.
+- [Problem Statement](#-problem-statement)
+- [Objectives](#-objectives)
+- [Key Features](#-key-features)
+- [Technology Stack](#️-technology-stack)
+- [System Architecture](#️-system-architecture)
+- [Project Structure](#-project-structure)
+- [Getting Started](#-getting-started)
+- [Development Roadmap](#-development-roadmap)
+- [Target Users](#-target-users)
+- [Future Scope](#-future-scope)
+- [Project Information](#-project-information)
+
+---
+
+## 🚩 Problem Statement
+
+Understanding an unfamiliar software project can be difficult and time-consuming, especially when working with large codebases, complex dependencies, legacy code, or incomplete documentation.
+
+Developers often need to manually inspect multiple files to understand program flow, relationships between modules, APIs, and overall architecture.
+
+CodeWise aims to reduce this effort by providing a centralized platform for codebase exploration, automated analysis, documentation assistance, and context-aware code explanations.
+
+## 🎯 Objectives
+
+- Simplify the understanding of unfamiliar software projects.
+- Automate source-code analysis and structural extraction.
+- Identify relationships and dependencies between project components.
+- Support semantic search across source-code files.
+- Generate meaningful code explanations and technical documentation.
+- Improve developer productivity and reduce codebase onboarding time.
 
 ## ✨ Key Features
 
-The following features are planned for the platform:
+The following capabilities are planned for CodeWise. Their availability depends on implementation progress.
 
-- **Codebase Analysis:** Analyze source files and extract useful structural information.
-- **Project Structure Understanding:** Explore files, modules, classes, and functions.
-- **Dependency Analysis:** Understand relationships and dependencies between project components.
-- **Architecture Visualization:** Generate visual representations of software architecture and workflows.
-- **AI-Powered Code Q&A:** Ask questions about a codebase and receive context-aware answers.
-- **Automated Documentation:** Generate project documentation and README content.
-- **UML and ER Diagrams:** Support visualization of class relationships and database structures.
-- **Code Quality Analysis:** Identify potential code quality issues and improvement opportunities.
-- **Security and Performance Insights:** Assist in identifying potential vulnerabilities and performance bottlenecks.
-- **Project Reports:** Generate structured reports summarizing codebase analysis.
+### 1. Intelligent Codebase Analysis
+Analyze source files to extract information about functions, classes, modules, and program structure.
 
-*Feature availability will depend on implementation progress.*
+### 2. Semantic Code Search
+Retrieve relevant code snippets based on the meaning of a natural-language query rather than relying only on exact keyword matches.
+
+### 3. AI-Powered Code Q&A
+Ask questions about a software project and receive context-aware answers grounded in relevant source-code snippets.
+
+### 4. Architecture Visualization
+Generate visual representations of application architecture, module relationships, and program workflows.
+
+### 5. Dependency Analysis
+Explore dependencies and relationships between files, functions, classes, and other software components.
+
+### 6. Automated Documentation
+Assist in generating project descriptions, README files, API documentation, and technical summaries.
+
+### 7. UML and ER Diagram Generation
+Support the visualization of class relationships and database structures.
+
+### 8. Code Quality and Security Insights
+Identify potential code quality issues, security risks, and performance bottlenecks.
+
+### 9. Project Analysis Reports
+Provide structured summaries of analyzed projects and their technical characteristics.
+
+---
 
 ## 🛠️ Technology Stack
 
-| Component | Technologies |
+| Component | Technology |
 |---|---|
-| Frontend | React.js, Tailwind CSS |
-| Backend | Python, FastAPI |
-| Code Parsing | Python AST, Tree-sitter |
-| AI and Language Models | Local LLM integration / compatible language models |
-| Retrieval-Augmented Generation | RAG, embeddings, vector search |
-| Vector Database | ChromaDB |
-| Database | PostgreSQL |
-| Caching | Redis |
-| Version Control | Git and GitHub |
+| Frontend | React.js, Vite |
+| UI Styling | CSS, Tailwind CSS (planned/integration-dependent) |
+| Backend | Python, FastAPI (planned) |
+| Code Parsing | Python AST, Tree-sitter (planned) |
+| Embeddings | Sentence Transformers |
+| Retrieval | Retrieval-Augmented Generation (RAG) |
+| Vector Storage | Vector-store module |
+| Vector Database | ChromaDB (planned/integration-dependent) |
+| Language Model | Local LLM integration (planned) |
+| Version Control | Git, GitHub |
 
-*The technology stack is planned and may evolve as development progresses.*
+*The stack may evolve as the project develops. Technologies listed as planned are not necessarily integrated into the current prototype.*
 
-## 🏗️ Project Architecture
+---
 
-The intended workflow is:
+## 🏗️ System Architecture
 
-1. **Input:** Upload a software project as a ZIP file or provide a GitHub repository.
-2. **Parsing:** Extract source files and analyze their structure.
-3. **Chunking:** Divide source code into meaningful chunks.
-4. **Embedding:** Convert code chunks into vector representations.
-5. **Storage:** Store chunks and embeddings for efficient retrieval.
-6. **Retrieval:** Retrieve relevant code based on a user's query.
-7. **AI Analysis:** Generate explanations and insights using retrieved project context.
-8. **Output:** Present code explanations, documentation, dependency information, and other analysis results.
+CodeWise is designed around the following workflow:
 
-## 📂 Repository Structure
+1. **Project Input:** Accept a software project through a ZIP upload or GitHub repository.
+2. **Source Extraction:** Extract source files and identify supported programming languages.
+3. **Code Parsing:** Analyze the source code and extract structural information.
+4. **Chunking:** Divide source files into meaningful code segments.
+5. **Embedding Generation:** Convert code segments into vector representations.
+6. **Vector Storage:** Store embeddings and associated code metadata.
+7. **Semantic Retrieval:** Retrieve relevant code segments based on user queries.
+8. **AI Processing:** Use retrieved context to generate explanations and technical insights.
+9. **Result Presentation:** Display code explanations, search results, documentation, and analysis reports.
+
+---
+
+## 📂 Project Structure
 
 ```text
 CodeWise_BE/
@@ -74,22 +120,39 @@ CodeWise_BE/
 │   │   ├── main.py
 │   │   └── models.py
 │   │
+│   ├── embedder.py
 │   ├── search.py
 │   ├── vector_store.py
 │   └── ...
 │
+├── frontend/
+│   ├── public/
+│   ├── src/
+│   │   ├── assets/
+│   │   ├── App.jsx
+│   │   ├── index.css
+│   │   └── main.jsx
+│   ├── index.html
+│   ├── package.json
+│   └── vite.config.js
+│
 └── README.md
 ```
 
-*The structure above highlights the current demo files; additional files may exist in the repository.*
+*This is an illustrative structure. Update it as the actual repository evolves.*
+
+---
 
 ## ⚙️ Getting Started
 
 ### Prerequisites
 
-- Python 3.11 or another version compatible with the project's dependencies.
-- Git.
-- A code editor such as Visual Studio Code.
+Install the following tools before running the project:
+
+- Git
+- Node.js and npm
+- Python compatible with the relevant demo dependencies
+- Visual Studio Code or another code editor
 
 ### 1. Clone the Repository
 
@@ -98,13 +161,37 @@ git clone https://github.com/sonalisingh0804/CodeWise.git
 cd CodeWise
 ```
 
-### 2. Navigate to the Demo
+### 2. Run the Frontend
+
+Navigate to the frontend directory:
+
+```bash
+cd frontend
+```
+
+Install the Node.js dependencies:
+
+```bash
+npm install
+```
+
+Start the Vite development server:
+
+```bash
+npm run dev
+```
+
+Open the local URL displayed in your terminal, typically `http://localhost:5173`.
+
+### 3. Run the Python Demo
+
+Open a separate terminal from the repository root:
 
 ```bash
 cd ai-demo
 ```
 
-### 3. Create and Activate a Virtual Environment
+Create and activate a virtual environment using an installed, compatible Python version.
 
 **Windows PowerShell:**
 
@@ -113,69 +200,67 @@ py -3.11 -m venv .venv
 .\.venv\Scripts\Activate.ps1
 ```
 
-### 4. Install Dependencies
-
-If a `requirements.txt` file is present in the demo folder:
+Install the demo dependencies if a `requirements.txt` file is available:
 
 ```bash
 pip install -r requirements.txt
 ```
 
-Otherwise, install the dependencies specified by the individual demo modules.
+Follow the instructions associated with the demo's current entry point and configuration. The frontend and Python demo may operate independently until backend integration is completed.
 
-### 5. Run the Demo
+---
 
-The exact entry point depends on the current implementation. For example, if the demo has a runnable `main.py`, follow its setup instructions and execute:
+## 🗺️ Development Roadmap
 
-```bash
-python sample_project/main.py
-```
+- [x] Initial code-analysis and semantic-search prototype
+- [x] Initial React + Vite frontend setup
+- [ ] Refine frontend interface and user experience
+- [ ] Integrate frontend with backend APIs
+- [ ] Implement software-project upload and extraction
+- [ ] Expand code parsing and dependency analysis
+- [ ] Integrate retrieval-augmented generation
+- [ ] Add context-aware code Q&A
+- [ ] Develop architecture and dependency visualizations
+- [ ] Generate automated documentation and reports
+- [ ] Test the platform on different software projects
 
-*Note: The command above is an example. Database configuration, embedding models, and other dependencies may need to be configured before execution.*
+*The checked items represent initial setup milestones; adjust them to match the actual state of the code.*
 
-## 🧠 Core Concepts
+---
 
-- **Code Parsing:** Extracts structural information from source code.
-- **Embeddings:** Represents code snippets as numerical vectors for semantic search.
-- **Vector Search:** Retrieves code snippets relevant to a natural-language query.
-- **Retrieval-Augmented Generation (RAG):** Combines relevant retrieved code context with a language model to generate grounded responses.
-- **Software Intelligence:** Turns source code and structural information into useful explanations and documentation.
+## 👥 Target Users
 
-## 🎯 Target Users
-
-- Software developers maintaining existing codebases.
-- Students learning from unfamiliar software projects.
-- Faculty members reviewing software engineering projects.
-- Startups and small development teams.
-- Freelancers working with inherited or third-party code.
+- Software developers working with unfamiliar codebases.
+- Students learning software engineering and project architecture.
+- Faculty members evaluating academic software projects.
+- Startups and small software development teams.
+- Freelancers maintaining existing applications.
 
 ## 🔮 Future Scope
 
-- Support for multiple programming languages.
+- Support for additional programming languages and frameworks.
+- Analysis of large repositories with multiple modules.
 - Interactive architecture and dependency graphs.
-- Advanced code quality and security analysis.
-- Automated API documentation.
-- Context-aware codebase chatbot.
-- Exportable project analysis reports.
-- Improved scalability for large repositories.
+- Automated API documentation and UML generation.
+- Improved code quality and security analysis.
+- Exportable technical reports.
+- More accurate context-aware AI assistance.
 
-## 👥 Project Information
+---
 
-**Project Name:** CodeWise – AI-Powered Software Intelligence Platform
+## 📚 Project Information
 
-**Domain:** Artificial Intelligence, Software Engineering, and Developer Tools
+| Field | Details |
+|---|---|
+| Project Name | CodeWise |
+| Domain | Artificial Intelligence and Software Engineering |
+| Project Type | BE Information Technology Project |
+| Duration | Two Semesters |
+| Repository | [GitHub — CodeWise](https://github.com/sonalisingh0804/CodeWise) |
 
-**Project Type:** BE Information Technology – Two-Semester Project
+## 🤝 Collaboration
 
-**Repository:** https://github.com/sonalisingh0804/CodeWise
-
-## 🤝 Contributions
-
-CodeWise is being developed collaboratively. Contributions, suggestions, and feedback that improve code understanding, software analysis, and developer productivity are welcome.
-
-## 📄 License
-
-A license can be added once the project team decides how the source code will be distributed and reused.
+CodeWise is being developed collaboratively as an academic software engineering project. The team aims to build a practical tool that makes complex codebases easier to explore, understand, and maintain.
 
 ---
 
